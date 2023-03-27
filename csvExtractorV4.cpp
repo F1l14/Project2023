@@ -53,6 +53,8 @@ void insertData(int counter, string token, vector<Record>& Data){
     default:
         break;
     }
+
+
 }
 
 
@@ -69,7 +71,7 @@ void splitstring(stringstream& ss, vector<Record>& Data){
 
         counter++;
 
-        if(ss.peek()=='"'){
+        if(ss.peek()=='\"'){
             ss.get();
             getline(ss, token, '"');
             insertData(counter, token, Data);
@@ -77,6 +79,7 @@ void splitstring(stringstream& ss, vector<Record>& Data){
 
             //! next comma after ",
             ss.get();
+            counter++;
          
         }
     }
@@ -122,7 +125,7 @@ int main(){
         {
             // if(Data[i].Commodity=="Milk powder, butter, and cheese") cout<<"True"<<endl;
             if(Data[i].Commodity=="Milk powder, butter, and cheese")
-           cout<<Data[i].Commodity<<endl;
+           cout<<"YES"<<endl;
         }
         
 
